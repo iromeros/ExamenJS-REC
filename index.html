@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen JS</title>
+    <link rel="stylesheet" href="index.css">
+    <!--Nuestro script-->
+    <script src="index.js"></script>
+</head>
+
+<body id="cos">
+
+    <header id="header">
+        <div>
+            <img src="https://www.esliceu.com/wp-content/uploads/2021/11/401_.png" alt="logo" title="Logo Es Liceu">
+        </div>
+        <div>
+            <span id="titol">Aplicacions Web - Examen recuperació JS - 02/03/2022</span>
+        </div>
+    </header>
+
+    <main id="principal">
+        <ol>
+            <li>
+                <p class="enunciat">Calculadora de temps <br>
+                    (33 punts)</p>
+                <p class="explicacio">
+                    Es vol calcular el nombre de minuts o segons d'una hora determinada acumulats des de les 00:00 del mateix dia.<br>
+                    Per exemple: 08:30 són 8h i 30 minuts, que en total són 510 minuts o 30.600 segons.<br>
+                    Teniu un desplegable on l'usuari pot triar si vol el càlcul en minuts o segons.<br>
+                    Heu de mostrar al final del càlcul la unitat que s'ha triat. Per exemple: "510 minuts". No basta només amb el número.<br>
+                    Pista: feu servir el mètode <a href="https://www.w3schools.com/jsref/jsref_split.asp" target="_blank">split()</a> per separar la hora de l'input en hores i minuts. Recordau que aquest mètode retorna un Array.
+                </p>
+                <p class="exercici">
+                    <input type="time" id="inputTime">
+                    <label for="tipusTime">Tipus:</label>
+                    <select id="tipusTime">
+                        <option value="m">Minuts</option>
+                        <option value="s">Segons</option>
+                    </select>
+                    <button onclick="calculaHora()">Calcula</button>
+                    <br>
+                    <label>Resultat:
+                        <span id="resultatTime"></span>
+                    </label>
+                </p>
+            </li>
+
+            <li>
+                <p class="enunciat">Calculadora d'interés fixo <br> (33 punts)</p>
+                <p class="explicacio">
+                    Volem calcular la quantitat de diners que s'obtenen a un dipòsit de tipus fixe.<br>
+                    Donada una quantitat, un temps (en anys) i un tipus d'interés, calcular la quantitat que s'obté.<br>
+                    Hi ha una fòrmula d'interés compost però per aquest exercici ho farem iterativament (bucle) per cada any.<br>
+                    Redondejau el resultat a 2 decimals i posau el símbol € al final.<br>
+                    Exemple: un capital de 1000€ a 10 anys a un interés del 3% anual donará una quantitat de 1343.92<br>
+                    Nota: el capital inicial pot tenir decimals però els anys són números sencers (integers). <br>
+                    Pista: recordau fer servir els mètodes
+                    <a href="https://www.w3schools.com/jsref/jsref_parseint.asp" target="_blank">parseInt()</a> 
+                    per als números sencers i
+                    <a href="https://www.w3schools.com/jsref/jsref_parsefloat.asp"  target="_blank">parseFloat()</a> 
+                    per als decimals.
+                </p>
+                <p class="exercici">
+                    <label for="capitalInicial">Capital inicial:</label>
+                    <input type="number" id="capitalInicial" size="10"> € <br>
+                    <label for="temps">Temps:</label>
+                    <input type="number" id="temps" size="4"> anys<br>
+                    <label for="tipus">Interés:</label>
+                    <select id="tipus">
+                        <option value="3">3%</option>
+                        <option value="5">5%</option>
+                        <option value="10">10%</option>
+                    </select>
+                    <br>
+                    <button onclick="calculaCapital()">Calcula</button>
+                    <br>
+                    <label>Capital final:
+                        <span id="capitalFinal"></span>
+                    </label>
+                </p>
+            </li>
+
+            <li>
+                <p class="enunciat">Estils CSS <br> (33 punts)</p>
+                <p class="explicacio">
+                    Posar un border i un fons de colors aleatoris al main ("principal")<br>
+                    El color del border i del fons han de ser diferents.<br>
+                    No fa falta canviar el color del texte.<br>
+                    El botó "Neteja" torna deixar el main amb fons blanc i border black. <br>
+                    Pista: heu de fer servir les propietats del DOM Style
+                    <a href="https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp" target="_blank">backgroundColor</a> i
+                    <a href="https://www.w3schools.com/jsref/prop_style_bordercolor.asp" target="_blank">borderColor</a>.
+                </p>
+                <p class="exercici">
+                    <button onclick="canviaEstil('random')">Colors!!!</button>
+                    <button onclick="canviaEstil('clear')">Neteja</button>
+                </p>
+            </li>
+        </ol>
+    </main>
+
+    <footer>
+        &copy; Daniel Martínez
+    </footer>
+
+</body>
+
+</html>
