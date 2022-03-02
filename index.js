@@ -18,15 +18,7 @@ function calculaHora() {
 }
 
 function calculaCapital() {
-    let capitalInicial = _id("capitalInicial").value;
-    let capitalInicial = parseFloat(_id("capitalInicial").value);
-
-    let number = temps / (3 * number / 100);
-    let number = temps - capitalFinal;
-    _id("number").innerHTML = number.toFixed(2);
-    _id("temps").innerHTML = temps.toFixed(2);
 }
-
 
 function canviaEstil(tipus) {
     var simbolos, color;
