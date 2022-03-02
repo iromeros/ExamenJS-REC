@@ -9,11 +9,12 @@ function calculaHora() {
     var m = horayminutos[1]
     let resultatTime;
     if (inputTime = "m") {
-        h = "m" / 60
+        resultatTime = ((h * 60) + m)
     }
-    else 
+    else{
         resultatTime = ((h * 60) + m) * 60
-    
+    } 
+    _id("resultatTime").innerHTML;
 
 }
 
@@ -21,18 +22,19 @@ function calculaCapital() {
 }
 
 function canviaEstil(tipus) {
-    var simbolos, color;
-        simbolos = "0123456789ABCDEF";
-        color = "#";
-    
-        for(var i = 0; i < 6; i++){
-            color = color + simbolos[Math.floor(Math.random() * 16)];
-        }
-    
-        document.body.style.border = color;
-        document.body.style.background = color;
-        document.getElementById("random").innerHTML = color;
-        document.getElementById("clear").innerHTML = "Copiar Color";
+    let Colorfons = "";
+    let borderColor = "";
+    if (tipus == "random"){
+        let red = Math.floor(Math.random() * 255);
+        let green = Math.floor(Math.random() * 255);
+        let blue = Math.floor(Math.random() * 255);
+        Colorfons = "rgb(" + red + "," + green + "," + blue + ")";
+    } else{
+        borderColor = "black";
+        Colorfons = "white";
     }
 
+    let cos = _id("principal");
+    principal.style.borderColor = borderColor;
+    principal.style.backgroundColor = Colorfons;
 }
